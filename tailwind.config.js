@@ -1,0 +1,98 @@
+const colors = require("tailwindcss/colors");
+
+module.exports = {
+  darkMode: "class",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "fragments/**/*.{js,ts,jsx,tsx}",
+  ],
+  daisyui: {
+    themes: [
+      {
+        mild: {
+          primary: "#661AE6",
+          "primary-content": "#ffffff",
+          secondary: "#818CF8",
+          "secondary-content": "#ffffff",
+          accent: "#f28c18",
+          "accent-content": "#ffffff",
+          neutral: "#191D24",
+          "neutral-focus": "#111318",
+          "neutral-content": "#A6ADBB",
+          "base-100": "#2A303C",
+          "base-200": "#242933",
+          "base-300": "#20252E",
+          "base-content": "#c2cbd8",
+          info: "#661AE6",
+          success: "#16a34a",
+          warning: "#d97706",
+          error: "#dc2626",
+        },
+      },
+    ],
+  },
+  theme: {
+    fontFamily: {
+      sans: ["Roboto", "system-ui"],
+      serif: ["Montserrat", "Georgia"],
+      mono: ["ui-monospace", "SFMono-Regular"],
+      body: ["Roboto", "Georgia"],
+    },
+    extend: {
+      colors: {
+        basic: "#f8f9fa",
+        dark: "#010409",
+        para_dark: "rgba(235, 235, 255, 0.65)",
+        title_dark: "rgba(235, 235, 255, 0.85)",
+        bmc: "#ffa33b",
+      },
+      typography: ({ theme }) => ({
+        slate: {
+          css: {
+            "--tw-prose-body": colors.slate[700],
+            "--tw-prose-headings": colors.slate[900],
+            "--tw-prose-lead": colors.slate[600],
+            "--tw-prose-links": colors.slate[900],
+            "--tw-prose-bold": colors.slate[900],
+            "--tw-prose-counters": colors.slate[500],
+            "--tw-prose-bullets": colors.slate[300],
+            "--tw-prose-hr": colors.slate[200],
+            "--tw-prose-quotes": colors.slate[900],
+            "--tw-prose-quote-borders": colors.slate[200],
+            "--tw-prose-captions": colors.slate[500],
+            "--tw-prose-code": colors.slate[900],
+            "--tw-prose-pre-code": colors.slate[200],
+            "--tw-prose-pre-bg": colors.slate[800],
+            "--tw-prose-th-borders": colors.slate[300],
+            "--tw-prose-td-borders": colors.slate[200],
+            "--tw-prose-invert-body": "rgba(235, 235, 255, 0.65)",
+            "--tw-prose-invert-headings": "rgba(235, 235, 255, 0.80)",
+            "--tw-prose-invert-lead": colors.slate[400],
+            "--tw-prose-invert-links": colors.white,
+            "--tw-prose-invert-bold": "rgba(235, 235, 255, 0.70)",
+            "--tw-prose-invert-counters": colors.slate[400],
+            "--tw-prose-invert-bullets": colors.slate[600],
+            "--tw-prose-invert-hr": colors.slate[700],
+            "--tw-prose-invert-quotes": colors.slate[100],
+            "--tw-prose-invert-quote-borders": colors.slate[700],
+            "--tw-prose-invert-captions": colors.slate[400],
+            "--tw-prose-invert-code": "rgba(255, 255, 255, 0.70)",
+            "--tw-prose-invert-pre-code": colors.slate[300],
+            "--tw-prose-invert-pre-bg": colors.slate[800],
+            "--tw-prose-invert-th-borders": colors.slate[600],
+            "--tw-prose-invert-td-borders": colors.slate[700],
+          },
+        },
+      }),
+    },
+  },
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+    require("daisyui"),
+  ],
+};
